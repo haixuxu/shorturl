@@ -6,6 +6,10 @@ module.exports = {
     exec_mode: 'cluster', // 使用集群模式
     watch: false, // 生产环境禁用文件监视
     max_memory_restart: '1G', // 内存超过 1G 时重启
+    env: {
+        // 环境参数，当前指定为生产环境 process.env.NODE_ENV
+        NODE_ENV: 'production',
+    },
     error_file: 'logs/err.log',
     out_file: 'logs/out.log',
     log_file: 'logs/combined.log',
