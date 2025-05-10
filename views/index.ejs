@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <form id="shortenForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <input type="url" name="url" placeholder="Enter your long URL here" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="expiresIn" value="7" min="1" placeholder="Expires in days (optional)">
+            </div>
+            <button type="submit">Shorten URL</button>
+        </form>
+
+        <div id="error" class="error"></div>
+
+        <div id="result" class="result">
+            <h2>Your shortened URL</h2>
+            <div class="result-url">
+                <input type="text" id="shortUrl" readonly>
+                <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+            </div>
+            <div class="expires-at" id="expiresAt"></div>
+        </div>
+
+        <div class="features">
+            <h2>Features</h2>
+            <ul class="feature-list">
+                <li>✓ Fast and reliable URL shortening</li>
+                <li>✓ Custom expiration time</li>
+                <li>✓ Secure and private</li>
+                <li>✓ Free to use</li>
+            </ul>
+        </div>
+    </div>
+
+<%- include('partials/footer') %> 
