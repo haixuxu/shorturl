@@ -5,6 +5,9 @@ const { customAlphabet } = require("nanoid");
 const path = require('path');
 const app = express();
 
+
+app.set('trust proxy', true);
+
 // 设置模板引擎
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
